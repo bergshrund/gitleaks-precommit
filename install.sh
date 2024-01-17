@@ -106,7 +106,6 @@ fi
 for hook in `find .git/hooks -not -regex ".*/*/*.sample$" -a -not -name pre-commit -type f -exec basename {} \;`
 do
 
-  hookname=`basename $hook`
   ln -sf ${PWD}/.git/hooks/${hookname} ${LOCAL_HOOKS_DIR}/${hookname}
 
 done 
