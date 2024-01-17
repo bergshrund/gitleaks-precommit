@@ -14,7 +14,7 @@ The installation script does not affect the default Git hooks directory content 
 git config core.hooksPath .githooks
 ```
 
-and then, it installs a pre-commit hook to a subdirectory with the name 'pre-commit.d' inside this directory. It also adds a symlink to the pre-commit hook in the default '.git/hooks' directory if it exists, and wraps these scripts with a special wrapper that allows the sequential execution of several pre-commit hooks. 
+and then, it installs a pre-commit hook to a subdirectory with the name 'pre-commit.d' inside this directory. It also adds a symlink to the pre-commit hook in the default '.git/hooks' directory if hook exists, and wraps these scripts with a special wrapper that allows the sequential execution of several pre-commit hooks. 
 
 ```
 ls /PATH/TO/GIT/.githooks/pre-commit
@@ -24,6 +24,6 @@ pre-commit
     └── 02-local-pre-commit --> .git/hooks/pre-commit
 ```
 
-During the installation process, the script attempts to detect your OS type and architecture to install the gitleak binary accordingly. However, if it fails to do so, it will prompt you for this information. Please note that the current release of gitleaks (v8.18.1) does not provide a prebuilt binary for Windows amd64.
+During the installation process, the script attempts to detect your OS type and architecture to install the gitleaks binary accordingly. However, if it fails to do so, it will prompt you for this information. Please note that the current release of gitleaks (v8.18.1) does not provide a prebuilt binary for Windows amd64.
 
-You don't need privilege escalation during the installation process because the gitleak binary will be installed locally in the .githooks/bin/ directory.
+You don't need privilege escalation during the installation process because the gitleaks binary will be installed locally in the .githooks/bin/ directory.
