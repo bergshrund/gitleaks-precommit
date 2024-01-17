@@ -103,7 +103,7 @@ if [ -x .git/hooks/pre-commit ]; then
 
 fi
 
-for hook in `find .git/hooks -not -regex ".*/*/*.sample$" -a -not -name pre-commit -type f`
+for hook in `find .git/hooks -not -regex ".*/*/*.sample$" -a -not -name pre-commit -type f -exec basename {} \;`
 do
 
   hookname=`basename $hook`
