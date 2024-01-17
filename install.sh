@@ -47,20 +47,13 @@ esac
 
 echo -e "Trying to download gitleaks_${REV}_${OS}_${ARCH}.tar.gz ...\n"
 
-curl -L ${REPO}/releases/download/v${REV}/gitleaks_${REV}_${OS}_${ARCH}.tar.gz --fail | tar -xzf -
+mkdir -p ${INSTALL_BIN}
+curl -L ${REPO}/releases/download/v${REV}/gitleaks_${REV}_${OS}_${ARCH}.tar.gz --fail | tar -xzf - -C ${INSTALL_BIN}
 
 if [ $? -ne 0 ]; then
   echo -e "Download error. Exited with non-zero value."
   exit 1
 fi
-
-echo -e "Moving gitleaks binary to ${INSTALL_BIN}\n"
-
-mkdir -p ${INSTALL_BIN}
-PATH=${PATH}:${INSTALL_BIN}
-export PATH
-mv gitleaks ${INSTALL_BIN}/
-rm -fr LICENSE README.md
 
 ##
 ## Set git config hooks.gitleaks
