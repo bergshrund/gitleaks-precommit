@@ -23,3 +23,5 @@ pre-commit
     └── 01-gitleaks
     └── 02-local-pre-commit --> .git/hooks/pre-commit
 ```
+
+During the installation process, the script attempts to detect your OS type and architecture to install the gitleak binary accordingly. However, if it fails to do so, it will prompt you for this information. Please note that the current release of gitleaks (v8.18.1) does not provide a prebuilt binary for Windows amd64.
