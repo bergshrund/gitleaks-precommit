@@ -91,7 +91,7 @@ if ( gitleaksEnabled )
 then
   gitleaks=`git config --type path hooks.gitleaks.bin`
   echo "Run gitleaks"
-  ${gitleaks} protect --staged -v
+  ${gitleaks} protect --staged -v -s ${PWD}/../../
 fi
 
 EOF
